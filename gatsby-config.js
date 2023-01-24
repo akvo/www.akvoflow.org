@@ -6,5 +6,7 @@ module.exports = {
     title: `Akvo Flow Landing Page`,
     siteUrl: `https://www.akvoflow.org`,
   },
-  plugins: [],
+  plugins: [
+    "gatsby-plugin-sass",
+  ],
 }
