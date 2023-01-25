@@ -6,16 +6,19 @@ import PricingTab from "../components/pricing/pricing-tab";
 import PricingTable from "../components/pricing/pricing-table";
 import Subscribe from "../components/subscribe";
 import Testimonial from "../components/testimonial";
+import "../styles/home.scss";
 
 const IndexPage = () => {
   return (
     <Layout>
-      <Overview />
-      <KeyFeatures />
-      <PricingTab />
-      <PricingTable />
-      <Testimonial />
-      <Subscribe />
+      <div className="home">
+        <Overview />
+        <KeyFeatures />
+        <PricingTab />
+        <PricingTable />
+        <Testimonial />
+        <Subscribe />
+      </div>
     </Layout>
   );
 };
