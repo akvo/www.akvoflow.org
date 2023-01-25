@@ -1,13 +1,10 @@
-import * as React from "react"
+import * as React from "react";
+import Layout from "../components/layout";
 
 const IndexPage = () => {
-  return (
-    <main>
-      <h1>Akvo Flow Landing Page</h1>
-    </main>
-  )
-}
+  return <Layout />;
+};
 
-export default IndexPage
+export default IndexPage;
 
-export const Head = () => <title>Akvo Flow</title>
+export const Head = () => <title>Akvo Flow</title>;
