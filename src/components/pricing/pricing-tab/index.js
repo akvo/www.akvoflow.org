@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "../../reusable/button";
+import Button, { ButtonExt } from "../../reusable/button";
 import { planData } from "../data";
 import Check from "../../../images/check.svg";
 import Cross from "../../../images/cross.svg";
@@ -47,15 +47,15 @@ const PricingTab = () => {
         <h3 className="plan-name">{selectedPlan.name}</h3>
         <div className="plan-price">{selectedPlan.price}</div>
         <small className="plan-note">{selectedPlan.note}</small>
-        <Button
-          type="filled"
-          text={
-            selectedPlan.name.toLowerCase() === "flow pro +"
-              ? "Contact sales"
-              : "Get started"
-          }
-          linkTo="/signup"
-        />
+        {selectedPlan.id === "flow-pro-plus" ? (
+          <Button type="filled" text="Contact sales" linkTo="/contact" />
+        ) : (
+          <ButtonExt
+            type="filled"
+            text="Get started"
+            linkTo="https://basic.akvoflow.org"
+          />
+        )}
       </div>
 
       <table className="features-table">

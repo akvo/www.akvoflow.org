@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../reusable/button/index";
+import Button, { ButtonExt } from "../../reusable/button/index";
 import Check from "../../../images/check.svg";
 import Cross from "../../../images/cross.svg";
 import "./index.scss";
@@ -49,13 +49,21 @@ const PricingTable = () => {
           <tr className="features">
             <td>Features</td>
             <td>
-              <Button type="filled" text="Get started" linkTo="/signup" />
+              <ButtonExt
+                type="filled"
+                text="Get started"
+                linkTo="https://basic.akvoflow.org"
+              />
             </td>
             <td>
-              <Button type="filled" text="Get started" linkTo="/signup" />
+              <ButtonExt
+                type="filled"
+                text="Get started"
+                linkTo="https://basic.akvoflow.org"
+              />
             </td>
             <td>
-              <Button type="filled" text="Contact sales" />
+              <Button type="filled" text="Contact sales" linkTo="/contact" />
             </td>
           </tr>
           <tr className="languages">

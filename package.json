@@ -16,11 +16,15 @@
   },
   "dependencies": {
     "gatsby": "^5.4.2",
+    "gatsby-plugin-react-i18next": "^3.0.1",
     "gatsby-plugin-react-svg": "^3.3.0",
     "gatsby-plugin-sass": "^6.4.0",
+    "gatsby-source-filesystem": "^5.4.0",
+    "i18next": "^22.4.9",
     "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^12.1.4",
     "swiper": "^8.4.6"
   }
 }

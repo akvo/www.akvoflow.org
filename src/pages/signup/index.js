@@ -201,3 +201,5 @@ const Signup = () => {
 };
 
 export default Signup;
+
+export const Head = () => <title>Signup - Akvo Flow</title>;

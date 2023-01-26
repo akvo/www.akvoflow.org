@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../reusable/button";
+import { ButtonExt } from "../reusable/button";
 import "./index.scss";
 
 import planetInfographic from "../../images/key-features/planet-infographic.png";
@@ -43,7 +43,11 @@ const Overview = () => {
             Akvo Flow can easily adapt to your data needs. Our partners collect
             and use data to drive change all over the world.
           </p>
-          <Button type="filled" text="Start for free now" />
+          <ButtonExt
+            type="filled"
+            text="Start for free now"
+            linkTo="https://basic.akvoflow.org"
+          />
           <img src={planetInfographic} alt="3d model planet infographic" />
         </div>
       </section>
@@ -72,9 +76,13 @@ const Overview = () => {
           The development sector has been progressively moving towards
           data-driven decision making and impact. With Akvo Flow, NGOs,
           governments, knowledge institutions and the private sector support
-          millions of beneficiaries all over the world.{" "}
+          millions of beneficiaries all over the world.
         </p>
-        <Button type="outlined" text="Get started" linkTo="/signup" />
+        <ButtonExt
+          type="outlined"
+          text="Get started"
+          linkTo="https://basic.akvoflow.org"
+        />
         <figure>
           <Map />
         </figure>
@@ -88,7 +96,7 @@ const Overview = () => {
         </div>
         <div className="banner">
           <h3 className="heading">
-            Take your development programme to the next level{" "}
+            Take your development programme to the next level
           </h3>
           <div className="paragraph">Capture reliable and timely data</div>
         </div>

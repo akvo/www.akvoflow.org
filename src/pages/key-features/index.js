@@ -1,6 +1,7 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Layout from "../../components/layout";
-import Button from "../../components/reusable/button";
+import { ButtonExt } from "../../components/reusable/button";
 import "./style.scss";
 import dataMonitoring from "../../images/key-features/data-monitoring.png";
 import devices from "../../images/key-features/devices.png";
@@ -67,7 +68,7 @@ const KeyFeatures = () => {
       <div className="key-features-page">
         <div className="key-feature-intro">
           <h2 className="heading">
-            Our features allow you to go{" "}
+            Our features allow you to go
             <span>from data collection to decision making.</span>
           </h2>
           <p className="paragraph">
@@ -83,7 +84,11 @@ const KeyFeatures = () => {
                 <div className="details">
                   <h3 className="title">{feature.title}</h3>
                   <p className="paragraph">{feature.description}</p>
-                  <Button type="outlined" text="Get started" linkTo="/signup" />
+                  <ButtonExt
+                    type="outlined"
+                    text="Get started"
+                    linkTo="https://basic.akvoflow.org"
+                  />
                 </div>
                 <img src={feature.image} alt={feature.title} />
               </li>
@@ -96,3 +101,24 @@ const KeyFeatures = () => {
 };
 
 export default KeyFeatures;
+
+export const Head = () => <title>Key features - Akvo Flow</title>;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(
+      filter: {
+        ns: { in: ["common", "key-features"] }
+        language: { eq: $language }
+      }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

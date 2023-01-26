@@ -1,6 +1,7 @@
+import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../../components/layout";
-import Button from "../../components/reusable/button";
+import { ButtonExt } from "../../components/reusable/button";
 import "./style.scss";
 
 const Contact = () => {
@@ -22,7 +23,11 @@ const Contact = () => {
           <h4 className="card-title">
             Start collecting data <span>today</span>
           </h4>
-          <Button type="outlined" text="Get started" linkTo="/signup" />
+          <ButtonExt
+            type="outlined"
+            text="Get started"
+            linkTo="https://basic.akvoflow.org"
+          />
         </div>
       </div>
     </Layout>
@@ -30,3 +35,21 @@ const Contact = () => {
 };
 
 export default Contact;
+
+export const Head = () => <title>Contact - Akvo Flow</title>;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(
+      filter: { ns: { in: ["common", "contact"] }, language: { eq: $language } }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

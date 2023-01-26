@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from "gatsby";
 import KeyFeatures from "../components/key-features";
 import Layout from "../components/layout";
 import Overview from "../components/overview";
@@ -26,3 +27,17 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => <title>Akvo Flow</title>;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: {ns: {in: ["common", "index"]}, language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
