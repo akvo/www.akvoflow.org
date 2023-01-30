@@ -1,22 +1,26 @@
 import React from "react";
-import { Link } from "gatsby";
 import RoundedArrow from "../../images/rounded-arrow.svg";
 import Dropdown from "../reusable/dropdown";
 import "./index.scss";
+import { Link, useI18next } from "gatsby-plugin-react-i18next";
+
+const languageNames = {
+  en: "English",
+  fr: "French",
+  es: "Espagnol",
+};
 
 const Footer = () => {
-  const selectedLanguage = "en";
-  const languages = [
-    { id: 1, value: "en", label: "English" },
-    { id: 2, value: "fr", label: "French" },
-    { id: 3, value: "es", label: "Espagnol" },
-  ];
-
-  const language = languages.find((lang) => lang.value === selectedLanguage);
-
-  const languageOptions = languages.filter(
-    (lang) => lang.value !== selectedLanguage
-  );
+  const { language, languages, originalPath, t } = useI18next();
+  const languageOptions = languages.map((lng) => ({
+    id: lng,
+    value: lng,
+    label: (
+      <Link to={originalPath} language={lng}>
+        {languageNames[lng]}
+      </Link>
+    ),
+  }));
 
   return (
     <footer className="footer">
@@ -28,26 +32,26 @@ const Footer = () => {
 
           <div className="navigation-container">
             <div className="navigation-section">
-              <div className="title">Pages</div>
+              <div className="title">{t("Pages")}</div>
               <ul className="navigation-list">
                 <li className="list-item">
-                  <Link to="/key-features">Key features</Link>
+                  <Link to="/key-features">{t("Key features")}</Link>
                 </li>
                 <li className="list-item">
-                  <Link to="/pricing">Pricing</Link>
+                  <Link to="/pricing">{t("Pricing")}</Link>
                 </li>
                 <li className="list-item">
-                  <Link to="/contact">Contact</Link>
+                  <Link to="/contact">{t("Contact")}</Link>
                 </li>
               </ul>
             </div>
 
             <div className="navigation-section">
-              <div className="title">General</div>
+              <div className="title">{t("General")}</div>
               <ul className="navigation-list">
                 <li className="list-item">
                   <a href="https://flowsupport.akvo.org/" name="support">
-                    Support
+                    {t("Support")}
                   </a>
                 </li>
                 <li className="list-item">
@@ -56,19 +60,21 @@ const Footer = () => {
                     target="_self"
                     name="term-of-service"
                   >
-                    Terms of Service
+                    {t("Terms of Service")}
                   </a>
                 </li>
               </ul>
             </div>
 
             <div className="navigation-section">
-              <div className="title">Useful info</div>
+              <div className="title">{t("Useful info")}</div>
               <ul className="navigation-list">
                 <li className="list-item">
-                  Chamber of Commerce (KvK) number: 27327087
+                  {t("Chamber of Commerce (KvK) number")}: 27327087
                 </li>
-                <li className="list-item">VAT number: NL 819794727 B01</li>
+                <li className="list-item">
+                  {t("VAT number")}: NL 819794727 B01
+                </li>
               </ul>
             </div>
           </div>
@@ -77,12 +83,12 @@ const Footer = () => {
           selectData={languageOptions}
           className="language-select"
           Icon={RoundedArrow}
-          textToDisplay={language.label}
+          textToDisplay={languageNames[language]}
         />
         <div className="copyright-wrapper">
-          <small>© 2023 AkvoFlow</small>
+          <small>© {new Date().getFullYear()} AkvoFlow</small>
           <small>
-            Powered by{" "}
+            {t("Powered by") + " "}
             <a href="https://akvo.org/" name="akvo">
               Akvo.org
             </a>

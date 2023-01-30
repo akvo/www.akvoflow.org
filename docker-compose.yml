@@ -8,5 +8,6 @@ services:
       - /app/node_modules
       - ./src:/app/src:delegate
       - ./static:/app/static:delegate
+      - ./locales:/app/locales:delegate
     ports:
       - "8000:8000"

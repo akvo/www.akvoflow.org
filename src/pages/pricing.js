@@ -1,3 +1,4 @@
+import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
 import PricingTab from "../components/pricing/pricing-tab";
@@ -13,3 +14,21 @@ const Pricing = () => {
 };
 
 export default Pricing;
+
+export const Head = () => <title>Pricing - Akvo Flow</title>;
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(
+      filter: { ns: { in: ["common", "pricing"] }, language: { eq: $language } }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

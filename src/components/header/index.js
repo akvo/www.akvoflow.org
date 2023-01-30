@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "gatsby";
 import DownArrow from "../../images/down-arrow.svg";
-import Button from "../reusable/button";
+import { ButtonExt } from "../reusable/button";
 import Dropdown from "../reusable/dropdown";
 import "./index.scss";
+import { Link, useI18next } from "gatsby-plugin-react-i18next";
 
 const DISABLE_SCROLLING_CLASS = "disabled-scroll";
 
-const languages = [
-  { id: 1, value: "En", label: "En" },
-  { id: 2, value: "Fr", label: "Fr" },
-  { id: 3, value: "Es", label: "Es" },
-];
-
 const Header = ({ active }) => {
   const [isShownMenu, setIsShownMenu] = useState(false);
+  const { language, languages, originalPath, t } = useI18next();
+  const languageOptions = languages.map((lng) => ({
+    id: lng,
+    value: lng,
+    label: (
+      <Link to={originalPath} language={lng}>
+        {lng}
+      </Link>
+    ),
+  }));
 
   useEffect(() => {
     const { innerWidth } = window;
@@ -40,7 +44,7 @@ const Header = ({ active }) => {
                 to="/key-features"
                 className={active === "key-features" ? "selected" : ""}
               >
-                Key features
+                {t("Key features")}
               </Link>
             </li>
             <li className="list-item">
@@ -48,7 +52,7 @@ const Header = ({ active }) => {
                 to="/pricing"
                 className={active === "pricing" ? `selected` : ""}
               >
-                Pricing
+                {t("Pricing")}
               </Link>
             </li>
             <li className="list-item">
@@ -56,23 +60,22 @@ const Header = ({ active }) => {
                 to="/contact"
                 className={active === "contact" ? "selected" : ""}
               >
-                Contact
+                {t("Contact")}
               </Link>
             </li>
           </ul>
           <div className="extra-navigation">
             <Dropdown
-              selectData={languages}
+              textToDisplay={language}
+              selectData={languageOptions}
               Icon={DownArrow}
               className="nav-item language-select"
             />
-            <a
-              href="http://akvoflowsandbox.appspot.com/"
-              className="nav-item login"
-            >
-              Log in
-            </a>
-            <Button type="outlined" text="Free trial" linkTo="/signup" />
+            <ButtonExt
+              type="outlined"
+              text={t("Free trial")}
+              linkTo="https://basic.akvoflow.org"
+            />
           </div>
         </nav>
 
@@ -94,24 +97,22 @@ const Header = ({ active }) => {
         <nav className="menu-navigation">
           <ul className="menu-navigation-list">
             <li className="menu-list-item">
-              <Link to="/key-features">Key features</Link>
+              <Link to="/key-features">{t("Key features")}</Link>
             </li>
             <li className="menu-list-item">
-              <Link to="/pricing">Pricing</Link>
+              <Link to="/pricing">{t("Pricing")}</Link>
             </li>
             <li className="menu-list-item">
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">{t("Contact")}</Link>
             </li>
           </ul>
 
           <div className="menu-extra-navigation">
-            <Button type="outlined" text="Free trial" linkTo="/signup" />
-            <a
-              href="http://akvoflowsandbox.appspot.com/"
-              className="menu-nav-item login"
-            >
-              Log in
-            </a>
+            <ButtonExt
+              type="outlined"
+              text={t("Free trial")}
+              linkTo="https://basic.akvoflow.org"
+            />
           </div>
         </nav>
       </div>
