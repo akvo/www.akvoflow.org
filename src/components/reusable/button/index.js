@@ -17,7 +17,7 @@ const Button = ({ text, type, linkTo = "#", action }) => {
 
 const ButtonExt = ({ text, type, linkTo = "#", action }) => {
   return (
-    <a href={linkTo} target="_blank">
+    <a href={linkTo} target="_blank" rel="noreferrer">
       <button
         onClick={action}
         className={type === "outlined" ? "outlined" : "filled"}
