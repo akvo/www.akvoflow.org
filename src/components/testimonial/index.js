@@ -1,6 +1,7 @@
 import React from "react";
 import { Navigation, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Trans } from "gatsby-plugin-react-i18next";
 import oneDrop from "../../images/organisations/one-drop-logo.png";
 import "./index.scss";
 import "swiper/css";
@@ -41,7 +42,7 @@ const Testimonial = () => {
   return (
     <div className="testimonial">
       <h3 className="heading">
-        What our <span>partners</span> say
+        <Trans i18nKey="What our partners say">What our <span>partners</span> say</Trans>
       </h3>
       <Swiper
         modules={[Navigation, A11y]}

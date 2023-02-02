@@ -1,2 +1,22 @@
 {
+  "Choose your plan": "Choisissez votre formule",
+  "Most popular": "Le plus populaire",
+  "Custom": "Personnalisé",
+  "*Only for new clients": "*Uniquement pour les nouveaux clients",
+  "Get more from your plan": "Tirez le meilleur parti de votre forfait",
+  "Contact sales": "Contacter le service commercial",
+  "Features": "Caractéristiques",
+  "*PowerBI integration will be gauged based on familiarity with the tool by the partner": "*L'intégration de PowerBI sera évaluée en fonction de la familiarité avec l'outil par le partenaire",
+  "Languages": "Langues",
+  "Configuration": "Configuration",
+  "Self service": "En libre service",
+  "Configuration service": "Prestation de configuration",
+  "Based on org. needs": "Basé sur l'org. Besoins",
+  "Data export formats": "Formats d'exportation de données",
+  "user_one": "{{count}} utilisateur",
+  "user_other": "{{count}} utilisateurs",
+  "Unlimited users": "Utilisateurs illimités",
+  "Link to mobile data collection App (*Android)": "Lien vers l'application mobile de collecte de données (*Android)",
+  "Help desk and support (in English)": "Helpdesk et support (en anglais)",
+  "Service package inc.": "Forfait de services inc."
 }

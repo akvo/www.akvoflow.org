@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
 import "./index.scss";
 
 import surveys from "../../images/survey-editor.png";
@@ -8,41 +9,42 @@ import dataExport from "../../images/data-exports-image.png";
 import dataPointSubmission from "../../images/data-point-submissions.png";
 
 const KeyFeatures = () => {
+  const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState(0);
   const featuresData = [
     {
       id: 1,
-      title: "Survey editor",
+      title: t("Survey editor"),
       description:
-        "Create, edit, copy, and store one or multiple surveys within your own personal online space.",
+        t("Create, edit, copy, and store one or multiple surveys within your own personal online space."),
       image: surveys,
     },
     {
       id: 2,
-      title: "Monitoring forms",
+      title: t("Monitoring forms"),
       description:
-        "Does your organisation carry out baseline to endline surveys? Use this feature to track change over time for specific data points.",
+        t("Does your organisation carry out baseline to endline surveys? Use this feature to track change over time for specific data points."),
       image: monitoringForm,
     },
     {
       id: 3,
-      title: "Assignments",
+      title: t("Assignments"),
       description:
-        "Connect your enumerators’ devices within your online workspace and create groups and assignments for specific surveys and within a specific timeframe.",
+        t("Connect your enumerators’ devices within your online workspace and create groups and assignments for specific surveys and within a specific timeframe."),
       image: assignments,
     },
     {
       id: 4,
-      title: "Data exports",
+      title: t("Data exports"),
       description:
-        "Export your data in various formats to conduct data cleaning, data analysis, geoshape, survey viewing, and more.",
+        t("Export your data in various formats to conduct data cleaning, data analysis, geoshape, survey viewing, and more."),
       image: dataExport,
     },
     {
       id: 5,
-      title: "Data point submissions",
+      title: t("Data point submissions"),
       description:
-        "Once you have created and assigned your surveys, get enumerators out in the field to collect data and submit the data points. Data points will be stored in your instance and can be accessed, edited, and exported directly from your instance.",
+        t("Once you have created and assigned your surveys, get enumerators out in the field to collect data and submit the data points. Data points will be stored in your instance and can be accessed, edited, and exported directly from your instance."),
       image: dataPointSubmission,
     },
   ];
@@ -50,7 +52,7 @@ const KeyFeatures = () => {
   return (
     <div className="key-features">
       <div className="wrapper">
-        <h3 className="heading">Akvo Flow’s key features</h3>
+        <h3 className="heading"><Trans>Akvo Flow’s key features</Trans></h3>
         <div className="accordion">
           {featuresData.map((data, index) => {
             const isActive = index === activeIndex;

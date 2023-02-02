@@ -1,2 +1,22 @@
 {
+  "Choose your plan": "Choose your plan",
+  "Most popular": "Most popular",
+  "Custom": "Custom",
+  "*Only for new clients": "*Only for new clients",
+  "Get more from your plan": "Get more from your plan",
+  "Contact sales": "Contact sales",
+  "Features": "Features",
+  "*PowerBI integration will be gauged based on familiarity with the tool by the partner": "*PowerBI integration will be gauged based on familiarity with the tool by the partner",
+  "Languages": "Languages",
+  "Configuration": "Configuration",
+  "Self service": "Self service",
+  "Configuration service": "Configuration service",
+  "Based on org. needs": "Based on org. needs",
+  "Data export formats": "Data export formats",
+  "user_one": "{{count}} user",
+  "user_other": "{{count}} users",
+  "Unlimited users": "Unlimited users",
+  "Link to mobile data collection App (*Android)": "Link to mobile data collection App (*Android)",
+  "Help desk and support (in English)": "Help desk and support (in English)",
+  "Service package inc.": "Service package inc."
 }
