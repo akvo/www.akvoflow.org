@@ -28,7 +28,7 @@ export const Head = () => <title>Akvo Flow</title>;
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: {ns: {in: ["common", "index"]}, language: {eq: $language}}) {
+    locales: allLocale(filter: {ns: {in: ["common", "index", "key-features", "pricing"]}, language: {eq: $language}}) {
       edges {
         node {
           ns

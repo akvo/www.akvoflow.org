@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
 import Button, { ButtonExt } from "../../reusable/button";
-import { planData } from "../data";
+import usePlanData from "../data";
 import Check from "../../../images/check.svg";
 import Cross from "../../../images/cross.svg";
 import "./index.scss";
 
 const PricingTab = () => {
+  const { t } = useTranslation();
+  const planData = usePlanData();
   const [selected, setSelected] = useState("flow-basic");
   const selectedPlan = planData.find((plan) => plan.id === selected);
 
@@ -42,17 +45,19 @@ const PricingTab = () => {
 
       <div className="plan">
         {selected === "flow-pro" && (
-          <div className="most-popular">Most popular</div>
+          <div className="most-popular">
+            <Trans>Most popular</Trans>
+          </div>
         )}
         <h3 className="plan-name">{selectedPlan.name}</h3>
         <div className="plan-price">{selectedPlan.price}</div>
         <small className="plan-note">{selectedPlan.note}</small>
         {selectedPlan.id === "flow-pro-plus" ? (
-          <Button type="filled" text="Contact sales" linkTo="/contact" />
+          <Button type="filled" text={t("Contact sales")} linkTo="/contact" />
         ) : (
           <ButtonExt
             type="filled"
-            text="Get started"
+            text={t("Get started")}
             linkTo="https://basic.akvoflow.org"
           />
         )}
@@ -62,7 +67,9 @@ const PricingTab = () => {
         <tbody>
           <tr className="features-row">
             <td className="feature">
-              <b>Features</b>
+              <b>
+                <Trans>Features</Trans>
+              </b>
             </td>
             <td className="empty-row"></td>
           </tr>
@@ -89,8 +96,10 @@ const PricingTab = () => {
         </tbody>
       </table>
       <small className="note">
-        *PowerBI integration will be gauged based on familiarity with the tool
-        by partner
+        <Trans>
+          *PowerBI integration will be gauged based on familiarity with the tool
+          by the partner
+        </Trans>
       </small>
     </div>
   );

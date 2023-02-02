@@ -1,5 +1,6 @@
 import React from "react";
 import { ButtonExt } from "../reusable/button";
+import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
 import "./index.scss";
 
 import planetInfographic from "../../images/key-features/planet-infographic.png";
@@ -15,6 +16,7 @@ import nuffic from "../../images/organisations/nuffic-logo.png";
 import Map from "../../images/map.svg";
 
 const Overview = () => {
+  const { t } = useTranslation();
   const organisationLogos = [
     { name: "Government of Sierra Leonne", logo: gSierraLeonne },
     { name: "Simavi", logo: simavi },
@@ -28,24 +30,28 @@ const Overview = () => {
   ];
 
   const statistics = [
-    { name: "Data points", count: "1.5M" },
-    { name: "Organisations", count: "200+" },
-    { name: "Countries ", count: "70+" },
+    { name: t("Data points"), count: "1.5M" },
+    { name: t("Organisations"), count: "200+" },
+    { name: t("Countries"), count: "70+" },
   ];
   return (
     <div className="overview">
       <section className="introduction">
         <div className="wrapper">
           <h2 className="heading">
-            Design your survey and <span>start collecting data</span> today.
+            <Trans i18nKey="Design your survey and start collecting data today.">
+              Design your survey and <span>start collecting data</span> today.
+            </Trans>
           </h2>
           <p className="paragraph">
-            Akvo Flow can easily adapt to your data needs. Our partners collect
-            and use data to drive change all over the world.
+            <Trans>
+              Akvo Flow can easily adapt to your data needs. Our partners
+              collect and use data to drive change all over the world.
+            </Trans>
           </p>
           <ButtonExt
             type="filled"
-            text="Start for free now"
+            text={t("Start for free now")}
             linkTo="https://basic.akvoflow.org"
           />
           <img src={planetInfographic} alt="3d model planet infographic" />
@@ -54,7 +60,7 @@ const Overview = () => {
 
       <section className="partners">
         <h3 className="heading">
-          Trusted by hundreds of businesses, NGOs & governments
+          <Trans>Trusted by hundreds of businesses, NGOs & governments</Trans>
         </h3>
         <div>
           {organisationLogos?.map((organisation, index) => (
@@ -69,18 +75,21 @@ const Overview = () => {
       </section>
       <section className="impact">
         <h3 className="heading">
-          Development organisations <span>all over the world</span> use Akvo
-          Flow to drive impact
+          <Trans i18nKey="Development organisations all over the world use Akvo Flow to drive impact">
+            Development organisations <span>all over the world</span> use Akvo Flow to drive impact
+          </Trans>
         </h3>
         <p className="paragraph">
-          The development sector has been progressively moving towards
-          data-driven decision making and impact. With Akvo Flow, NGOs,
-          governments, knowledge institutions and the private sector support
-          millions of beneficiaries all over the world.
+          <Trans>
+            The development sector has been progressively moving towards
+            data-driven decision making and impact. With Akvo Flow, NGOs,
+            governments, knowledge institutions and the private sector support
+            millions of beneficiaries all over the world.
+          </Trans>
         </p>
         <ButtonExt
           type="outlined"
-          text="Get started"
+          text={t("Get started")}
           linkTo="https://basic.akvoflow.org"
         />
         <figure>
@@ -96,9 +105,11 @@ const Overview = () => {
         </div>
         <div className="banner">
           <h3 className="heading">
-            Take your development programme to the next level
+            <Trans>Take your development programme to the next level</Trans>
           </h3>
-          <div className="paragraph">Capture reliable and timely data</div>
+          <div className="paragraph">
+            <Trans>Capture reliable and timely data</Trans>
+          </div>
         </div>
       </section>
     </div>
