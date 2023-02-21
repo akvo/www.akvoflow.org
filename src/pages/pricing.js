@@ -1,9 +1,10 @@
 import { graphql } from "gatsby";
 import React from "react";
-import { Trans } from "gatsby-plugin-react-i18next";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 import Layout from "../components/layout";
 import PricingTab from "../components/pricing/pricing-tab";
 import PricingTable from "../components/pricing/pricing-table";
+import Seo from "../components/seo";
 
 const Pricing = () => {
   return (
@@ -16,11 +17,10 @@ const Pricing = () => {
 
 export default Pricing;
 
-export const Head = () => (
-  <title>
-    <Trans>Pricing</Trans> - Akvo Flow
-  </title>
-);
+export const Head = () => {
+  const { t } = useTranslation();
+  return <Seo title={t("Pricing")} />;
+};
 
 export const query = graphql`
   query ($language: String!) {

@@ -11,6 +11,7 @@ import dataExport from "../../images/key-features/data-export.png";
 import planetInfographic from "../../images/key-features/bordered-planet-infographic.png";
 import webform from "../../images/key-features/webform.png";
 import support from "../../images/key-features/support.png";
+import Seo from "../../components/seo";
 
 const KeyFeatures = () => {
   const { t } = useTranslation();
@@ -115,11 +116,10 @@ const KeyFeatures = () => {
 
 export default KeyFeatures;
 
-export const Head = () => (
-  <title>
-    <Trans>Key features</Trans> - Akvo Flow
-  </title>
-);
+export const Head = () => {
+  const { t } = useTranslation();
+  return <Seo title={t("Key features")} />;
+};
 
 export const query = graphql`
   query ($language: String!) {
