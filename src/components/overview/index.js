@@ -3,7 +3,7 @@ import { ButtonExt } from "../reusable/button";
 import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
 import "./index.scss";
 
-import planetInfographic from "../../images/key-features/planet-infographic.png";
+import planetInfographic from "../../images/hero-image.png";
 import gSierraLeonne from "../../images/organisations/g-sierra-leonne-logo.png";
 import simavi from "../../images/organisations/simavi-logo.png";
 import fairTrade from "../../images/organisations/fairtrade-logo.png";
