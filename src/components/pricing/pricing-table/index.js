@@ -22,13 +22,11 @@ const PricingTable = () => {
                 <Trans>Most popular</Trans>
               </div>
             </td>
-            <td></td>
           </tr>
 
           <tr className="plan-type">
             <th>&nbsp;</th>
             <th>Flow Basic</th>
-            <th>Flow Pro</th>
             <th>Flow Pro +</th>
           </tr>
           <tr className="plan-price">
@@ -36,14 +34,6 @@ const PricingTable = () => {
             <td>
               <div className="wrapper">
                 <div>£0/m</div>
-                <span>
-                  <Trans>*Only for new clients</Trans>
-                </span>
-              </div>
-            </td>
-            <td>
-              <div className="wrapper">
-                <div>£350/m</div>
                 <span>
                   <Trans>*Only for new clients</Trans>
                 </span>
@@ -72,13 +62,6 @@ const PricingTable = () => {
               />
             </td>
             <td>
-              <ButtonExt
-                type="filled"
-                text={t("Get started")}
-                linkTo="https://basic.akvoflow.org"
-              />
-            </td>
-            <td>
               <Button
                 type="filled"
                 text={t("Contact sales")}
@@ -92,14 +75,10 @@ const PricingTable = () => {
             </td>
             <td>EN/FR/ES</td>
             <td>EN/FR/ES</td>
-            <td>EN/FR/ES</td>
           </tr>
           <tr className="configuration">
             <td>
               <Trans>Configuration</Trans>
-            </td>
-            <td>
-              <Trans>Self service</Trans>
             </td>
             <td>
               <Trans>Self service</Trans>
@@ -118,9 +97,6 @@ const PricingTable = () => {
             <td className="check" aria-label="yes">
               <Check />
             </td>
-            <td className="check" aria-label="yes">
-              <Check />
-            </td>
           </tr>
           <tr className="data-submission">
             <td>
@@ -128,9 +104,6 @@ const PricingTable = () => {
             </td>
             <td>
               <Trans>300 Max.</Trans>
-            </td>
-            <td>
-              <Trans>1000 Max.</Trans>
             </td>
             <td>
               <Trans>Based on org. needs</Trans>
@@ -141,7 +114,6 @@ const PricingTable = () => {
               <Trans>Data export formats</Trans>
             </td>
             <td>1</td>
-            <td>2</td>
             <td>4</td>
           </tr>
           <tr className="monitoring">
@@ -150,9 +122,6 @@ const PricingTable = () => {
             </td>
             <td>
               <Cross />
-            </td>
-            <td className="check" aria-label="yes">
-              <Check />
             </td>
             <td className="check" aria-label="yes">
               <Check />
@@ -166,18 +135,12 @@ const PricingTable = () => {
               <Trans i18nKey="user" count={1}>1 user</Trans>
             </td>
             <td>
-              <Trans i18nKey="user" count={4}>4 users</Trans>
-            </td>
-            <td>
               <Trans>Unlimited users</Trans>
             </td>
           </tr>
           <tr className="device-link">
             <td>
               <Trans>Link to mobile data collection App (*Android)</Trans>
-            </td>
-            <td className="check" aria-label="yes">
-              <Check />
             </td>
             <td className="check" aria-label="yes">
               <Check />
@@ -196,9 +159,6 @@ const PricingTable = () => {
             <td className="check" aria-label="yes">
               <Check />
             </td>
-            <td className="check" aria-label="yes">
-              <Check />
-            </td>
           </tr>
           <tr className="integration">
             <td>
@@ -206,9 +166,6 @@ const PricingTable = () => {
             </td>
             <td>
               <Cross />
-            </td>
-            <td className="check" aria-label="yes">
-              <Check />
             </td>
             <td className="check" aria-label="yes">
               <Check />
@@ -224,18 +181,19 @@ const PricingTable = () => {
             <td>
               <Trans>Service package inc.</Trans>
             </td>
-            <td>
-              <Trans>Service package inc.</Trans>
+          </tr>
+          <tr>
+            <td colSpan="3">
+              <small className="note">
+                <Trans>
+                  *PowerBI integration will be gauged based on familiarity with the tool
+                  by the partner
+                </Trans>
+              </small>
             </td>
           </tr>
         </tbody>
       </table>
-      <small className="note">
-        <Trans>
-          *PowerBI integration will be gauged based on familiarity with the tool
-          by the partner
-        </Trans>
-      </small>
     </div>
   );
 };

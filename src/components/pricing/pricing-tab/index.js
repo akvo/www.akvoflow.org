@@ -26,14 +26,6 @@ const PricingTab = () => {
           Flow Basic
         </li>
         <li
-          className={`list-item ${isSelected("flow-pro") && "selected"}`}
-          onClick={() => setSelected("flow-pro")}
-          onKeyDown={() => setSelected("flow-pro")}
-          role="presentation"
-        >
-          Flow Pro
-        </li>
-        <li
           className={`list-item ${isSelected("flow-pro-plus") && "selected"}`}
           onClick={() => setSelected("flow-pro-plus")}
           onKeyDown={() => setSelected("flow-pro-plus")}
@@ -44,7 +36,7 @@ const PricingTab = () => {
       </ul>
 
       <div className="plan">
-        {selected === "flow-pro" && (
+        {selected === "flow-pro-plus" && (
           <div className="most-popular">
             <Trans>Most popular</Trans>
           </div>
