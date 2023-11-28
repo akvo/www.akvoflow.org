@@ -33,7 +33,7 @@ const PricingTable = () => {
             <td></td>
             <td>
               <div className="wrapper">
-                <div>£0/m</div>
+                <div>Free</div>
                 <span>
                   <Trans>*Only for new clients</Trans>
                 </span>
