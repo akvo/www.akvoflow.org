@@ -19,7 +19,7 @@ const Contact = () => {
             <b>
               <Trans>Address</Trans>
             </b>
-            <span>'s-Gravenhekje 1-A, 1011 TG Amsterdam, The Netherlands</span>
+            <span>Mindspace Dam, Nieuwezijds Voorburgwal 162, 1012 SJ Amsterdam, The Netherlands</span>
           </li>
           <li className="list-item phone">
             <b>
